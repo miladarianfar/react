@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect, Link } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home';
 import Content from './pages/Content';
@@ -11,22 +11,22 @@ function App() {
       <BrowserRouter>
         <nav>
           <h1>Comments</h1>
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/content">Content</a>
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/content">Content</Link>
         </nav>
 
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/" component={<Home />}>
             <Home />
           </Route>
-          <Route path="/content">
+          <Route path="/content" component={<Content />}>
             <Content />
           </Route>
-          <Route path="/about">
+          <Route path="/about" component={<About />}>
             <About />
           </Route>
-          <Route path="/comment/:id">
+          <Route path="/comment/:id" component={<Comment />}>
             <Comment />
           </Route>
           <Route path="*">

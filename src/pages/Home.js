@@ -16,9 +16,9 @@ export default function Home() {
                 <div key={comment.id} className="card">
                     <h2>{comment.name}</h2>
                     <p>{comment.email}</p>
-                    <a href={`/comment/${comment.id}`}>
+                    <Link to={`/comment/${comment.id}`}>
                         <p>Read more...</p>
-                    </a>
+                    </Link>
                 </div>
             ))}
         </div>
